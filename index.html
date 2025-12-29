@@ -15,43 +15,106 @@
             font-family: "Latin Modern Roman", "Computer Modern Serif", serif;
             line-height: 1.55;
         }
+
         .container {
             max-width: 860px;
             margin: 60px auto;
             padding: 0 20px;
         }
+
         h1 {
             font-size: 2.4em;
             margin-bottom: 0.2em;
         }
+
         .subtitle {
             font-style: italic;
             font-size: 1.1em;
         }
+
         .contact {
             font-size: 0.95em;
             margin-top: 10px;
+            line-height: 1.6;
         }
+
         h2 {
             font-size: 1.4em;
             border-bottom: 1px solid #000;
             margin-top: 40px;
             margin-bottom: 15px;
         }
+
         ul, ol {
             margin-left: 20px;
         }
+
         li {
             margin-bottom: 8px;
         }
+
         a {
             color: #000;
             text-decoration: underline;
+            position: relative;
+            z-index: 10;
         }
+
+        .cv-link {
+            display: inline-block;
+            padding: 4px 8px;
+            border: 1px solid #000;
+            font-size: 0.9em;
+            text-decoration: none;
+            margin-left: 6px;
+        }
+
         footer {
             margin-top: 60px;
             font-size: 0.9em;
             text-align: center;
+        }
+
+        /* ============================
+           Mobile optimization
+           ============================ */
+        @media (max-width: 768px) {
+
+            .container {
+                margin: 30px auto;
+                padding: 0 15px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                width: 140px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 2.0em;
+            }
+
+            .subtitle {
+                font-size: 1.0em;
+            }
+
+            .contact {
+                font-size: 0.9em;
+            }
+
+            h2 {
+                font-size: 1.25em;
+            }
+
+            ul, ol {
+                margin-left: 18px;
+            }
         }
     </style>
 </head>
@@ -59,25 +122,7 @@
 <body>
 <div class="container">
 
-<!-- <header>
-    <h1>Dr. Anil Kumar</h1>
-    <p class="subtitle">
-        Computational Geophysics · Hydrology · AI for Earth Systems
-    </p>
-
-    <p class="contact">
-        Principal Project Scientist<br>
-        Department of Civil Engineering, Indian Institute of Technology Delhi<br>
-        New Delhi – 110016, India<br><br>
-        ✉️ <a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
-        <a href="https://github.com/akumar2312">GitHub</a> ·
-        <a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en">Google Scholar</a> ·
-        <a href="https://www.linkedin.com/in/anil-kumar-2572a48a/">LinkedIn</a>
-        <a href="assets/Curriculum_Vitae AK.pdf"
-           target="_blank" rel="noopener noreferrer"><strong>CV (PDF)</strong></a>
-    </p>
-</header> -->
-<header style="display: flex; align-items: flex-start; gap: 30px;">
+<header style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
 
     <div style="flex: 1;">
         <h1>Dr. Anil Kumar</h1>
@@ -89,10 +134,18 @@
             Principal Project Scientist<br>
             Department of Civil Engineering, Indian Institute of Technology Delhi<br>
             New Delhi – 110016, India<br><br>
-            ✉️ <a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
-            <a href="https://github.com/akumar2312">GitHub</a> ·
-            <a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en">Google Scholar</a> ·
-            <a href="https://www.linkedin.com/in/anil-kumar-2572a48a/">LinkedIn</a>
+
+            Email:
+            <a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
+            <a href="https://github.com/akumar2312" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+            <a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en"
+               target="_blank" rel="noopener noreferrer">Google Scholar</a> ·
+            <a href="https://www.linkedin.com/in/anil-kumar-2572a48a/"
+               target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+            <a href="assets/Curriculum_Vitae AK.pdf"
+               class="cv-link"
+               target="_blank"
+               rel="noopener noreferrer"><strong>CV (PDF)</strong></a>
         </p>
     </div>
 
@@ -107,7 +160,6 @@
     </div>
 
 </header>
-
 
 <section>
     <h2>Research Bio</h2>
@@ -180,13 +232,11 @@
         </li>
         <li>
             Kumar, A., Hu, R., Walsh, S.D.C. (2021).
-            <em>Reduced-order hydro-mechanical models of fractured media.</em>
+            <em>Reduced-order hydro-mechanical models.</em>
             Rock Mechanics and Rock Engineering.
         </li>
     </ol>
-    <p>
-        (For a complete list, see the full CV.)
-    </p>
+    <p>(For a complete list, see the full CV.)</p>
 </section>
 
 <section>
@@ -208,9 +258,7 @@
 </section>
 
 <footer>
-    <p>
-        © 2025 Dr. Anil Kumar · Last updated December 2025
-    </p>
+    <p>© 2025 Dr. Anil Kumar · Last updated December 2025</p>
 </footer>
 
 </div>
