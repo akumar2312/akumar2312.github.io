@@ -17,9 +17,50 @@
         }
 
         .container {
-            max-width: 860px;
+            max-width: 1100px;
             margin: 60px auto;
             padding: 0 20px;
+        }
+
+        /* ============================
+           Two-column layout
+           ============================ */
+        .page {
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Left navigation */
+        .nav {
+            flex: 0 0 190px;
+            font-size: 0.95em;
+            position: sticky;
+            top: 40px;
+            align-self: flex-start;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .nav li {
+            margin-bottom: 10px;
+        }
+
+        .nav a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px dotted #000;
+        }
+
+        .nav a:hover {
+            border-bottom: 1px solid #000;
+        }
+
+        /* Main content */
+        .main {
+            flex: 1;
         }
 
         h1 {
@@ -56,8 +97,6 @@
         a {
             color: #000;
             text-decoration: underline;
-            position: relative;
-            z-index: 10;
         }
 
         .cv-link {
@@ -78,22 +117,27 @@
         /* ============================
            Mobile optimization
            ============================ */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
 
-            .container {
-                margin: 30px auto;
-                padding: 0 15px;
-            }
-
-            header {
+            .page {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
             }
 
-            header img {
-                width: 140px;
-                margin-bottom: 15px;
+            .nav {
+                position: relative;
+                top: 0;
+                border-bottom: 1px solid #000;
+                padding-bottom: 15px;
+            }
+
+            .nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .nav li {
+                margin-bottom: 0;
             }
 
             h1 {
@@ -103,24 +147,35 @@
             .subtitle {
                 font-size: 1.0em;
             }
-
-            .contact {
-                font-size: 0.9em;
-            }
-
-            h2 {
-                font-size: 1.25em;
-            }
-
-            ul, ol {
-                margin-left: 18px;
-            }
         }
     </style>
 </head>
 
 <body>
 <div class="container">
+
+<div class="page">
+
+<!-- ============================
+     LEFT NAVIGATION
+     ============================ -->
+<nav class="nav">
+    <ul>
+        <li><a href="#bio">Research Bio</a></li>
+        <li><a href="#interests">Research Interests</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Professional Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#textbook">Textbook</a></li>
+        <li><a href="#talks">Invited Talks</a></li>
+        <li><a href="#teaching">Teaching & Mentoring</a></li>
+    </ul>
+</nav>
+
+<!-- ============================
+     MAIN CONTENT
+     ============================ -->
+<div class="main">
 
 <header style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
 
@@ -137,48 +192,36 @@
 
             Email:
             <a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
-            <a href="https://github.com/akumar2312" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-            <a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en"
-               target="_blank" rel="noopener noreferrer">Google Scholar</a> ·
-            <a href="https://www.linkedin.com/in/anil-kumar-2572a48a/"
-               target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-            <a href="assets/Curriculum_Vitae_No_References_.pdf"
-               class="cv-link"
-               target="_blank"
-               rel="noopener noreferrer"><strong>CV (PDF)</strong></a>
+            <a href="https://github.com/akumar2312" target="_blank">GitHub</a> ·
+            <a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en" target="_blank">Google Scholar</a> ·
+            <a href="https://www.linkedin.com/in/anil-kumar-2572a48a/" target="_blank">LinkedIn</a> ·
+            <a href="assets/Curriculum_Vitae_No_References_.pdf" class="cv-link" target="_blank"><strong>CV (PDF)</strong></a>
         </p>
     </div>
 
     <div style="flex-shrink: 0;">
         <img src="assets/public_pic.jpg"
              alt="Dr. Anil Kumar"
-             style="
-                width: 160px;
-                border-radius: 4px;
-                border: 1px solid #000;
-             ">
+             style="width: 160px; border-radius: 4px; border: 1px solid #000;">
     </div>
 
 </header>
 
-<section>
+<section id="bio">
     <h2>Research Bio</h2>
     <p>
         I am a computational geophysicist with expertise in integrating machine learning
         and numerical modeling to address complex geoscientific and environmental problems.
-        I earned my Ph.D. through a joint doctoral program between the Indian Institute of
-        Technology Bombay and Monash University, Australia.
+        I earned my Ph.D. through a joint doctoral program between IIT Bombay and Monash University.
     </p>
     <p>
         My research spans geophysics, hydrology, and applied artificial intelligence, with
-        particular emphasis on inverse problems, reduced-order modeling, surrogate modeling,
-        and operational flood forecasting. I currently serve as Principal Project Scientist
-        at IIT Delhi, where I lead the development of reduced-order and surrogate models for
-        real-time urban flood prediction in support of disaster risk reduction.
+        emphasis on inverse problems, reduced-order modeling, surrogate modeling,
+        and operational flood forecasting.
     </p>
 </section>
 
-<section>
+<section id="interests">
     <h2>Research Interests</h2>
     <ul>
         <li>Geophysical inversion and Bayesian analysis</li>
@@ -189,120 +232,53 @@
     </ul>
 </section>
 
-<section>
+<section id="education">
     <h2>Education</h2>
-    <p>
-        <strong>Ph.D. in Computational Geophysics</strong><br>
-        IIT Bombay (India) & Monash University (Australia), 2016–2022<br>
-        Thesis: <em>Statistical and Machine Learning Models for the Evaluation of
-        Geophysical and Geomechanical Data</em>
-    </p>
-    <p>
-        <strong>M.Tech. in Petroleum Geoscience</strong><br>
-        Indian Institute of Technology Bombay, 2013–2015
-    </p>
-    <p>
-        <strong>Integrated M.Tech. in Geophysical Technology</strong><br>
-        Indian Institute of Technology Roorkee, 2008–2013
-    </p>
+    <p><strong>Ph.D. in Computational Geophysics</strong><br>
+       IIT Bombay & Monash University (2016–2022)</p>
+    <p><strong>M.Tech. in Petroleum Geoscience</strong><br>
+       IIT Bombay (2013–2015)</p>
+    <p><strong>Integrated M.Tech. in Geophysical Technology</strong><br>
+       IIT Roorkee (2008–2013)</p>
 </section>
 
-<section>
+<section id="experience">
     <h2>Professional Experience</h2>
     <ul>
-        <li><strong>Principal Project Scientist</strong>, IIT Delhi (Aug 2023 – Present)</li>
-        <li><strong>Senior Project Scientist</strong>, IIT Delhi (Dec 2022 – Jul 2023)</li>
-        <li><strong>Junior Research Fellow</strong>, IIT Bombay (Aug 2015 – Apr 2016)</li>
+        <li>Principal Project Scientist, IIT Delhi (Aug 2023 – Present)</li>
+        <li>Senior Project Scientist, IIT Delhi (Dec 2022 – Jul 2023)</li>
+        <li>Junior Research Fellow, IIT Bombay (2015 – 2016)</li>
     </ul>
 </section>
 
-<section>
+<section id="publications">
     <h2>Selected Publications</h2>
     <ol>
-        <li>
-            Kumar, A., Saharia, M., Kirstetter, P. (2024).  
-            <em>Mapping a novel metric for flash flood recovery using interpretable machine learning.</em>  
-            Journal of Hydrometeorology.  
-            doi:
-            <a href="https://doi.org/10.1175/JHM-D-23-0196.1"
-               target="_blank" rel="noopener noreferrer">
-               10.1175/JHM-D-23-0196.1
-            </a>
-        </li>
-
-        <li>
-            Hu, R., Kumar, A., Yellishetty, M., Walsh, S.D.C. (2024).  
-            <em>A bootstrap strategy to train, validate and test reduced-order models of coupled geomechanical processes.</em>  
-            Computers and Geotechnics, 167, 106094.  
-            doi:
-            <a href="https://doi.org/10.1016/j.compgeo.2024.106094"
-               target="_blank" rel="noopener noreferrer">
-               10.1016/j.compgeo.2024.106094
-            </a>
-        </li>
-
-        <li>
-            Kumar, A., Hu, R., Walsh, S.D.C. (2021).  
-            <em>Development of reduced order hydro-mechanical models of fractured media.</em>  
-            Rock Mechanics and Rock Engineering, 55, 235–251.  
-            doi:
-            <a href="https://doi.org/10.1007/s00603-021-02668-9"
-               target="_blank" rel="noopener noreferrer">
-               10.1007/s00603-021-02668-9
-            </a>
-        </li>
+        <li>Journal of Hydrometeorology, 2024</li>
+        <li>Computers and Geotechnics, 2024</li>
+        <li>Rock Mechanics and Rock Engineering, 2021</li>
     </ol>
-    <p>
-    (For a complete list, see the
-    <a href="assets/Curriculum_Vitae_No_References_.pdf"
-       target="_blank"
-       rel="noopener noreferrer">full CV</a>.)
-    </p>
-
 </section>
 
-<section>
+<section id="textbook">
     <h2>Textbook</h2>
-    <p>
-        <strong>Python for Water and Environment</strong><br>
-        Dr. Anil Kumar and Dr. Manabendra Saharia, Springer Nature, 2024.<br>
-        A textbook for undergraduate and postgraduate students, computational hydrologists, geophysicists, and water professionals.<br>
-        doi:
-        <a href="https://doi.org/10.1007/978-981-99-9408-3"
-           target="_blank"
-           rel="noopener noreferrer">
-           10.1007/978-981-99-9408-3
-        </a>
-    </p>
-
+    <p><strong>Python for Water and Environment</strong>, Springer Nature, 2024</p>
 </section>
 
-<section>
-<h2>Invited Talks</h2>
-<ul>
-    <li>
-        <strong>Clarity, Structure, Impact: Writing Scientific Reports That Work</strong><br>
-        Invited guest lecture, M.Sc. Artificial Intelligence and Machine Learning Programme, 
-        VIT Vellore, October 16, 2025.
-    </li>
-    <li>
-        <strong>GPU-Enabled Flood Forecasting System for Chennai</strong><br>
-        Invited talk to Ph.D. students and researchers, School of Artificial Intelligence (ScAI), 
-        IIT Delhi, July 2025.
-    </li>
-</ul>
+<section id="talks">
+    <h2>Invited Talks</h2>
+    <ul>
+        <li>VIT Vellore – Scientific Writing (2025)</li>
+        <li>IIT Delhi – GPU Flood Forecasting (2025)</li>
+    </ul>
 </section>
 
-<section>
+<section id="teaching">
     <h2>Teaching & Mentoring</h2>
     <ul>
-        <li>Lecture on Foundations of AI/ML to Delhi Government IT Dept. officers</li>
-        <li>Delivered a 2-day advanced training program on AI and geospatial analytics for officers of the Indian Army’s Northern Command</li>
-        <li>Instructor, Madhya Pradesh State Skill Development & Employment Generation Board (MPSSDEGB) along with Foundation For Innovation And Technology Transfer, Indian Institute of Technology Delhi (FITT – IITD)</li>
-        <li>Instructor, AI/ML for Industry (CEP e-Vidya, IIT Delhi): completed 4 batches; Batch 5 and 6 currently ongoing</li>
-        <li>Teaching Assistant and Co-taught, CVL736 – Soft Computing Techniques in Water Resources (IIT Delhi)</li>
-        <li>Teaching Assistant and Co-taught, CVP731 – Simulation Lab & Computational Water Resources (IIT Delhi)</li>
-        <li>Teaching Assistant and Co-taught, GS535 – Statistical Methods in Geosciences (IIT Bombay)</li>
+        <li>AI/ML training for Delhi Govt. IT Officers</li>
+        <li>AI & Geospatial Analytics – Indian Army</li>
+        <li>CEP e-Vidya, IIT Delhi (6 batches)</li>
     </ul>
 </section>
 
@@ -310,6 +286,9 @@
     <p>© 2025 Dr. Anil Kumar · Last updated December 2025</p>
 </footer>
 
-</div>
+</div> <!-- end main -->
+</div> <!-- end page -->
+</div> <!-- end container -->
+
 </body>
 </html>
