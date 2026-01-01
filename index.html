@@ -1,251 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dr. Anil Kumar | Academic Homepage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Dr. Anil Kumar | Academic Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Computer Modern / LaTeX-like typography -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<!-- Computer Modern / LaTeX-like typography -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 
-    <style>
-        body {
-            background: #ffffff;
-            color: #000000;
-            font-family: "Latin Modern Roman", "Computer Modern Serif", serif;
-            line-height: 1.55;
-        }
+<style>
+body {
+    background: #ffffff;
+    color: #000000;
+    font-family: "Latin Modern Roman", "Computer Modern Serif", serif;
+    line-height: 1.55;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 860px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
 
-        /* ============================
-           Two-column layout
-           ============================ */
-        .page {
-            display: flex;
-            gap: 40px;
-        }
+/* ===== Two-column layout ===== */
+.page {
+    display: flex;
+    gap: 40px;
+}
 
-        /* Left navigation */
-        .nav {
-            flex: 0 0 190px;
-            font-size: 0.95em;
-            position: sticky;
-            top: 40px;
-            align-self: flex-start;
-        }
+/* Left navigation */
+.nav {
+    flex: 0 0 180px;
+    font-size: 0.95em;
+    position: sticky;
+    top: 40px;
+    align-self: flex-start;
+}
 
-        .nav ul {
-            list-style: none;
-            padding-left: 0;
-        }
+.nav ul {
+    list-style: none;
+    padding-left: 0;
+}
 
-        .nav li {
-            margin-bottom: 10px;
-        }
+.nav li {
+    margin-bottom: 10px;
+}
 
-        .nav a {
-            color: #000;
-            text-decoration: none;
-            border-bottom: 1px dotted #000;
-        }
+.nav a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+}
 
-        .nav a:hover {
-            border-bottom: 1px solid #000;
-        }
+.nav a.active {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+}
 
-        /* Main content */
-        .main {
-            flex: 1;
-        }
+/* Main column */
+.main {
+    flex: 1;
+}
 
-        h1 {
-            font-size: 2.4em;
-            margin-bottom: 0.2em;
-        }
+h1 {
+    font-size: 2.4em;
+    margin-bottom: 0.2em;
+}
 
-        .subtitle {
-            font-style: italic;
-            font-size: 1.1em;
-        }
+.subtitle {
+    font-style: italic;
+    font-size: 1.1em;
+}
 
-        .contact {
-            font-size: 0.95em;
-            margin-top: 10px;
-            line-height: 1.6;
-        }
+.contact {
+    font-size: 0.95em;
+    margin-top: 10px;
+    line-height: 1.6;
+}
 
-        h2 {
-            font-size: 1.4em;
-            border-bottom: 1px solid #000;
-            margin-top: 40px;
-            margin-bottom: 15px;
-        }
+h2 {
+    font-size: 1.4em;
+    border-bottom: 1px solid #000;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    scroll-margin-top: 80px;
+}
 
-        ul, ol {
-            margin-left: 20px;
-        }
+ul, ol {
+    margin-left: 20px;
+}
 
-        li {
-            margin-bottom: 8px;
-        }
+li {
+    margin-bottom: 8px;
+}
 
-        a {
-            color: #000;
-            text-decoration: underline;
-        }
+a {
+    color: #000;
+    text-decoration: underline;
+    position: relative;
+    z-index: 10;
+}
 
-        .cv-link {
-            display: inline-block;
-            padding: 4px 8px;
-            border: 1px solid #000;
-            font-size: 0.9em;
-            text-decoration: none;
-            margin-left: 6px;
-        }
+.cv-link {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #000;
+    font-size: 0.9em;
+    text-decoration: none;
+    margin-left: 6px;
+}
 
-        footer {
-            margin-top: 60px;
-            font-size: 0.9em;
-            text-align: center;
-        }
+footer {
+    margin-top: 60px;
+    font-size: 0.9em;
+    text-align: center;
+}
 
-        /* ============================
-           Mobile
-           ============================ */
-        @media (max-width: 900px) {
-            .page {
-                flex-direction: column;
-            }
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+    .page {
+        flex-direction: column;
+    }
 
-            .nav {
-                position: relative;
-                top: 0;
-                border-bottom: 1px solid #000;
-                padding-bottom: 15px;
-            }
+    .nav {
+        position: relative;
+        top: 0;
+        border-bottom: 1px solid #000;
+        padding-bottom: 15px;
+    }
 
-            .nav ul {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 12px;
-            }
+    .nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
 
-            .nav li {
-                margin-bottom: 0;
-            }
-        }
-    </style>
+    .nav li {
+        margin-bottom: 0;
+    }
+}
+</style>
 </head>
 
 <body>
 <div class="container">
 <div class="page">
 
-<!-- ============================
-     LEFT COLUMN LINKS
-     ============================ -->
+<!-- ===== LEFT COLUMN ===== -->
 <nav class="nav">
-    <ul>
-        <li><a href="#bio">Research Bio</a></li>
-        <li><a href="#interests">Research Interests</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Professional Experience</a></li>
-        <li><a href="#publications">Selected Publications</a></li>
-        <li><a href="#textbook">Textbook</a></li>
-        <li><a href="#talks">Invited Talks</a></li>
-        <li><a href="#teaching">Teaching & Mentoring</a></li>
-    </ul>
+<ul>
+    <li><a href="#bio">Research Bio</a></li>
+    <li><a href="#interests">Research Interests</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Professional Experience</a></li>
+    <li><a href="#publications">Selected Publications</a></li>
+    <li><a href="#textbook">Textbook</a></li>
+    <li><a href="#talks">Invited Talks</a></li>
+    <li><a href="#teaching">Teaching & Mentoring</a></li>
+</ul>
 </nav>
 
-<!-- ============================
-     MAIN CONTENT (UNCHANGED)
-     ============================ -->
+<!-- ===== MAIN CONTENT (UNCHANGED) ===== -->
 <div class="main">
 
 <header style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
+<div style="flex: 1;">
+<h1>Dr. Anil Kumar</h1>
+<p class="subtitle">
+Computational Geophysics · Hydrodynamic Modeling · AI for Earth Systems
+</p>
 
-    <div style="flex: 1;">
-        <h1>Dr. Anil Kumar</h1>
-        <p class="subtitle">
-            Computational Geophysics · Hydrodynamic Modeling · AI for Earth Systems
-        </p>
+<p class="contact">
+Principal Project Scientist<br>
+Department of Civil Engineering, Indian Institute of Technology Delhi<br>
+New Delhi – 110016, India<br><br>
 
-        <p class="contact">
-            Principal Project Scientist<br>
-            Department of Civil Engineering, Indian Institute of Technology Delhi<br>
-            New Delhi – 110016, India<br><br>
+Email:
+<a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
+<a href="https://github.com/akumar2312" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+<a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> ·
+<a href="https://www.linkedin.com/in/anil-kumar-2572a48a/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+<a href="assets/Curriculum_Vitae_No_References_.pdf" class="cv-link" target="_blank" rel="noopener noreferrer"><strong>CV (PDF)</strong></a>
+</p>
+</div>
 
-            Email:
-            <a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
-            <a href="https://github.com/akumar2312" target="_blank">GitHub</a> ·
-            <a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en" target="_blank">Google Scholar</a> ·
-            <a href="https://www.linkedin.com/in/anil-kumar-2572a48a/" target="_blank">LinkedIn</a> ·
-            <a href="assets/Curriculum_Vitae_No_References_.pdf"
-               class="cv-link"
-               target="_blank"><strong>CV (PDF)</strong></a>
-        </p>
-    </div>
-
-    <div style="flex-shrink: 0;">
-        <img src="assets/public_pic.jpg"
-             alt="Dr. Anil Kumar"
-             style="width: 160px; border-radius: 4px; border: 1px solid #000;">
-    </div>
-
+<div style="flex-shrink: 0;">
+<img src="assets/public_pic.jpg" alt="Dr. Anil Kumar"
+style="width:160px;border-radius:4px;border:1px solid #000;">
+</div>
 </header>
 
 <section id="bio">
-    <h2>Research Bio</h2>
-    <!-- CONTENT UNCHANGED -->
-    ...
+<h2>Research Bio</h2>
+<p>
+I am a computational geophysicist with expertise in integrating machine learning
+and numerical modeling to address complex geoscientific and environmental problems.
+I earned my Ph.D. through a joint doctoral program between the Indian Institute of
+Technology Bombay and Monash University, Australia.
+</p>
+<p>
+My research spans geophysics, hydrology, and applied artificial intelligence, with
+particular emphasis on inverse problems, reduced-order modeling, surrogate modeling,
+and operational flood forecasting. I currently serve as Principal Project Scientist
+at IIT Delhi, where I lead the development of reduced-order and surrogate models for
+real-time urban flood prediction in support of disaster risk reduction.
+</p>
 </section>
 
 <section id="interests">
-    <h2>Research Interests</h2>
-    ...
+<h2>Research Interests</h2>
+<ul>
+<li>Geophysical inversion and Bayesian analysis</li>
+<li>Reduced-order and surrogate modeling</li>
+<li>AI/ML applications in geoscience and hydrology</li>
+<li>Urban flood forecasting and decision-support systems</li>
+<li>High-performance numerical modeling</li>
+</ul>
 </section>
 
 <section id="education">
-    <h2>Education</h2>
-    ...
+<h2>Education</h2>
+<p><strong>Ph.D. in Computational Geophysics</strong><br>
+IIT Bombay (India) & Monash University (Australia), 2016–2022<br>
+Thesis: <em>Statistical and Machine Learning Models for the Evaluation of
+Geophysical and Geomechanical Data</em></p>
+<p><strong>M.Tech. in Petroleum Geoscience</strong><br>
+Indian Institute of Technology Bombay, 2013–2015</p>
+<p><strong>Integrated M.Tech. in Geophysical Technology</strong><br>
+Indian Institute of Technology Roorkee, 2008–2013</p>
 </section>
 
 <section id="experience">
-    <h2>Professional Experience</h2>
-    ...
+<h2>Professional Experience</h2>
+<ul>
+<li><strong>Principal Project Scientist</strong>, IIT Delhi (Aug 2023 – Present)</li>
+<li><strong>Senior Project Scientist</strong>, IIT Delhi (Dec 2022 – Jul 2023)</li>
+<li><strong>Junior Research Fellow</strong>, IIT Bombay (Aug 2015 – Apr 2016)</li>
+</ul>
 </section>
 
 <section id="publications">
-    <h2>Selected Publications</h2>
-    ...
+<h2>Selected Publications</h2>
+<!-- unchanged list -->
 </section>
 
 <section id="textbook">
-    <h2>Textbook</h2>
-    ...
+<h2>Textbook</h2>
+<!-- unchanged -->
 </section>
 
 <section id="talks">
-    <h2>Invited Talks</h2>
-    ...
+<h2>Invited Talks</h2>
+<!-- unchanged -->
 </section>
 
 <section id="teaching">
-    <h2>Teaching & Mentoring</h2>
-    ...
+<h2>Teaching & Mentoring</h2>
+<!-- unchanged -->
 </section>
 
 <footer>
-    <p>© 2025 Dr. Anil Kumar · Last updated December 2025</p>
+<p>© 2025 Dr. Anil Kumar · Last updated December 2025</p>
 </footer>
 
-</div> <!-- main -->
-</div> <!-- page -->
-</div> <!-- container -->
+</div>
+</div>
+</div>
+
+<!-- ===== AUTO-HIGHLIGHT SCRIPT ===== -->
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) {
+            current = sec.id;
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current
+        );
+    });
+});
+</script>
+
 </body>
 </html>
