@@ -1,36 +1,46 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dr. Anil Kumar | Academic Homepage</title>
+<title>Dr. Anil Kumar | IIT (ISM) Dhanbad</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Computer Modern / LaTeX-like typography -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 
 <style>
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #ffffff;
     color: #000000;
     font-family: "Latin Modern Roman", "Computer Modern Serif", serif;
     line-height: 1.55;
+    margin: 0;
 }
 
 .container {
-    max-width: 860px;
+    max-width: 920px;
     margin: 60px auto;
     padding: 0 20px;
 }
 
 /* ===== Two-column layout ===== */
+
 .page {
     display: flex;
-    gap: 40px;
+    gap: 42px;
 }
 
 /* Left navigation */
+
 .nav {
-    flex: 0 0 180px;
+    flex: 0 0 185px;
     font-size: 0.95em;
     position: sticky;
     top: 40px;
@@ -40,6 +50,7 @@ body {
 .nav ul {
     list-style: none;
     padding-left: 0;
+    margin-left: 0;
 }
 
 .nav li {
@@ -49,7 +60,11 @@ body {
 .nav a {
     color: #000;
     text-decoration: none;
-    border-bottom: 1px dotted #000;
+    border-bottom: 1px dotted #777;
+}
+
+.nav a:hover {
+    border-bottom: 1px solid #000;
 }
 
 .nav a.active {
@@ -58,36 +73,57 @@ body {
 }
 
 /* Main column */
+
 .main {
     flex: 1;
+    min-width: 0;
 }
 
 h1 {
     font-size: 2.4em;
-    margin-bottom: 0.2em;
+    margin-top: 0;
+    margin-bottom: 0.15em;
+    line-height: 1.15;
 }
 
 .subtitle {
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 1.08em;
+    margin-top: 5px;
+}
+
+.position {
+    margin-top: 15px;
+    line-height: 1.55;
 }
 
 .contact {
     font-size: 0.95em;
-    margin-top: 10px;
-    line-height: 1.6;
+    margin-top: 12px;
+    line-height: 1.7;
 }
 
 h2 {
     font-size: 1.4em;
     border-bottom: 1px solid #000;
-    margin-top: 40px;
+    margin-top: 42px;
     margin-bottom: 15px;
     scroll-margin-top: 80px;
 }
 
+h3 {
+    font-size: 1.08em;
+    margin-top: 22px;
+    margin-bottom: 6px;
+}
+
+p {
+    text-align: left;
+}
+
 ul, ol {
     margin-left: 20px;
+    padding-left: 12px;
 }
 
 li {
@@ -103,23 +139,48 @@ a {
 
 .cv-link {
     display: inline-block;
-    padding: 4px 8px;
+    padding: 4px 9px;
     border: 1px solid #000;
     font-size: 0.9em;
     text-decoration: none;
     margin-left: 6px;
 }
 
+.cv-link:hover {
+    background: #000;
+    color: #fff;
+}
+
+.research-highlight {
+    border-left: 2px solid #000;
+    padding-left: 14px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.small {
+    font-size: 0.93em;
+}
+
 footer {
-    margin-top: 60px;
-    font-size: 0.9em;
+    margin-top: 65px;
+    padding-top: 15px;
+    border-top: 1px solid #aaa;
+    font-size: 0.88em;
     text-align: center;
 }
 
 /* ===== Mobile ===== */
+
 @media (max-width: 900px) {
+
+    .container {
+        margin-top: 30px;
+    }
+
     .page {
         flex-direction: column;
+        gap: 20px;
     }
 
     .nav {
@@ -127,186 +188,796 @@ footer {
         top: 0;
         border-bottom: 1px solid #000;
         padding-bottom: 15px;
+        flex-basis: auto;
     }
 
     .nav ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 10px 16px;
     }
 
     .nav li {
         margin-bottom: 0;
     }
+
 }
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column-reverse;
+    }
+
+    header img {
+        width: 135px !important;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
 </style>
 </head>
 
 <body>
+
 <div class="container">
 <div class="page">
 
-<!-- ===== LEFT COLUMN ===== -->
+<!-- ========================================================= -->
+<!-- LEFT NAVIGATION -->
+<!-- ========================================================= -->
+
 <nav class="nav">
 <ul>
+
     <li><a href="#bio">Research Bio</a></li>
     <li><a href="#interests">Research Interests</a></li>
+    <li><a href="#research">Current Research</a></li>
     <li><a href="#education">Education</a></li>
-    <li><a href="#experience">Professional Experience</a></li>
+    <li><a href="#experience">Academic Experience</a></li>
     <li><a href="#publications">Selected Publications</a></li>
     <li><a href="#textbook">Textbook</a></li>
-    <li><a href="#talks">Invited Talks</a></li>
-    <li><a href="#teaching">Teaching & Mentoring</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#mentoring">Mentoring</a></li>
+    <li><a href="#talks">Selected Talks</a></li>
+
 </ul>
 </nav>
 
-<!-- ===== MAIN CONTENT (UNCHANGED) ===== -->
+<!-- ========================================================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================================================= -->
+
 <div class="main">
 
-<header style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
-<div style="flex: 1;">
+<header style="
+    display:flex;
+    align-items:flex-start;
+    gap:30px;
+    flex-wrap:wrap;
+">
+
+<div style="flex:1; min-width:260px;">
+
 <h1>Dr. Anil Kumar</h1>
+
 <p class="subtitle">
-Computational Geophysics · Hydrodynamic Modeling · AI for Earth Systems
+Computational Geophysics · Scientific Machine Learning ·
+AI for Earth & Environmental Systems
+</p>
+
+<p class="position">
+
+<strong>Assistant Professor (Grade-I)</strong><br>
+
+Department of Applied Geophysics<br>
+
+Indian Institute of Technology
+(Indian School of Mines) Dhanbad<br>
+
+Jharkhand – 826004, India
+
 </p>
 
 <p class="contact">
-Principal Project Scientist<br>
-Department of Civil Engineering, Indian Institute of Technology Delhi<br>
-New Delhi – 110016, India<br><br>
+
+Office: Room 505, New Academic Complex<br>
 
 Email:
-<a href="mailto:anil.ml.geos@gmail.com">anil.ml.geos@gmail.com</a> ·
-<a href="https://github.com/akumar2312" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-<a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> ·
-<a href="https://www.linkedin.com/in/anil-kumar-2572a48a/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-<a href="assets/Curriculum_Vitae_No_References_.pdf" class="cv-link" target="_blank" rel="noopener noreferrer"><strong>CV (PDF)</strong></a>
+<a href="mailto:anil.ml.geos@gmail.com">
+anil.ml.geos@gmail.com
+</a>
+<br>
+
+<a href="https://github.com/akumar2312"
+target="_blank"
+rel="noopener noreferrer">
+GitHub
+</a>
+&nbsp;·&nbsp;
+
+<a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en"
+target="_blank"
+rel="noopener noreferrer">
+Google Scholar
+</a>
+&nbsp;·&nbsp;
+
+<a href="https://www.linkedin.com/in/anil-kumar-2572a48a/"
+target="_blank"
+rel="noopener noreferrer">
+LinkedIn
+</a>
+
+<a href="assets/Curriculum_Vitae_No_References_.pdf"
+class="cv-link"
+target="_blank"
+rel="noopener noreferrer">
+<strong>CV (PDF)</strong>
+</a>
+
 </p>
+
 </div>
 
-<div style="flex-shrink: 0;">
-<img src="assets/public_pic.jpg" alt="Dr. Anil Kumar"
-style="width:160px;border-radius:4px;border:1px solid #000;">
+<div style="flex-shrink:0;">
+
+<img
+src="assets/public_pic.jpg"
+alt="Dr. Anil Kumar"
+style="
+width:160px;
+border-radius:4px;
+border:1px solid #000;
+">
+
 </div>
+
 </header>
 
+
+<!-- ========================================================= -->
+<!-- RESEARCH BIO -->
+<!-- ========================================================= -->
+
 <section id="bio">
+
 <h2>Research Bio</h2>
+
 <p>
-I am a computational geophysicist with expertise in integrating machine learning
-and numerical modeling to address complex geoscientific and environmental problems.
-I earned my Ph.D. through a joint doctoral program between the Indian Institute of
-Technology Bombay and Monash University, Australia.
+I am an Assistant Professor in the Department of Applied Geophysics
+at IIT (ISM) Dhanbad. My research lies at the intersection of
+<strong>computational geophysics, numerical modeling,
+inverse problems, and artificial intelligence</strong>.
+I am particularly interested in developing computational methods
+that combine physical models with modern machine learning to
+improve the interpretation, prediction, and characterization of
+complex Earth and environmental systems.
 </p>
+
 <p>
-My research spans geophysics, hydrology, and applied artificial intelligence, with
-particular emphasis on inverse problems, reduced-order modeling, surrogate modeling,
-and operational flood forecasting. I currently serve as Principal Project Scientist
-at IIT Delhi, where I lead the development of reduced-order and surrogate models for
-real-time urban flood prediction in support of disaster risk reduction.
+My work spans geophysical inversion, reduced-order modeling,
+scientific machine learning, hydrodynamic simulation,
+hydrogeophysics, and geospatial artificial intelligence.
+A recurring theme of my research is the development of
+<strong>physics-aware surrogate and AI models</strong> that can
+retain the interpretability of governing physical equations while
+substantially reducing computational cost.
 </p>
+
+<p>
+I received my Ph.D. in Computational Geophysics through the
+IITB–Monash Research Academy, a joint doctoral program between
+the Indian Institute of Technology Bombay and Monash University,
+Australia. Before joining IIT (ISM), I worked at IIT Delhi on
+high-performance hydrologic and hydrodynamic modeling,
+AI-assisted flood forecasting, and reduced-order modeling.
+</p>
+
+<div class="research-highlight">
+
+<strong>Current research direction:</strong>
+physics-based and data-driven computational methods for
+geophysical inversion, subsurface characterization,
+environmental prediction, and digital twins of Earth systems.
+
+</div>
+
 </section>
+
+
+<!-- ========================================================= -->
+<!-- RESEARCH INTERESTS -->
+<!-- ========================================================= -->
 
 <section id="interests">
+
 <h2>Research Interests</h2>
+
 <ul>
-<li>Geophysical inversion and Bayesian analysis</li>
-<li>Reduced-order and surrogate modeling</li>
-<li>AI/ML applications in geoscience and hydrology</li>
-<li>Urban flood forecasting and decision-support systems</li>
-<li>High-performance numerical modeling</li>
+
+<li>
+<strong>Geophysical inversion and uncertainty quantification</strong> —
+deterministic, Bayesian, object-based, and probabilistic inversion.
+</li>
+
+<li>
+<strong>Scientific machine learning</strong> —
+physics-informed learning, neural operators, surrogate models,
+and differentiable numerical models.
+</li>
+
+<li>
+<strong>Computational geophysics</strong> —
+large-scale numerical simulation of electrical, electromagnetic,
+hydrological, and coupled subsurface processes.
+</li>
+
+<li>
+<strong>Reduced-order modeling</strong> —
+POD-based models, latent representations, operator learning,
+and computational acceleration of PDE systems.
+</li>
+
+<li>
+<strong>Hydrogeophysics and environmental geophysics</strong> —
+near-surface characterization, groundwater, soil properties,
+flooding, and coupled environmental processes.
+</li>
+
+<li>
+<strong>AI for Earth systems</strong> —
+deep learning, geospatial AI, remote sensing, and digital-twin
+frameworks for environmental prediction.
+</li>
+
+<li>
+<strong>High-performance scientific computing</strong> —
+GPU-enabled simulation, scalable PDE solvers, and
+high-resolution Earth-system modeling.
+</li>
+
 </ul>
+
 </section>
+
+
+<!-- ========================================================= -->
+<!-- CURRENT RESEARCH -->
+<!-- ========================================================= -->
+
+<section id="research">
+
+<h2>Current Research</h2>
+
+<h3>Geophysical Inversion & Subsurface Imaging</h3>
+
+<p>
+Development of physics-informed and learning-assisted approaches
+for electrical and near-surface geophysical inversion, with
+particular interest in reducing non-uniqueness through
+informative parameterizations, learned configuration–response
+spaces, and probabilistic inference.
+</p>
+
+
+<h3>Scientific Machine Learning for PDE Systems</h3>
+
+<p>
+Development of neural operators, reduced-order models,
+differentiable forward models, and physics-guided learning
+frameworks for computationally demanding geophysical and
+environmental systems.
+</p>
+
+
+<h3>Urban Flood Forecasting & Environmental Digital Twins</h3>
+
+<p>
+Development of high-resolution hydrologic–hydrodynamic modeling
+and AI systems for rapid urban inundation prediction using
+numerical simulations, remote sensing, and deep-learning-based
+surrogate models.
+</p>
+
+
+<h3>GeoAI & 3-D Environmental Mapping</h3>
+
+<p>
+Application of deep learning, foundation models, LiDAR,
+remote sensing, and point-cloud analysis for extracting and
+reconstructing urban and natural features relevant to
+environmental modeling and risk assessment.
+</p>
+
+
+<h3>PURAM Lab</h3>
+
+<p>
+My research activities are being developed under the
+<strong>PURAM Lab</strong> —
+<em>Physics-based Unified Research in Advanced Modeling</em> —
+with an emphasis on the integration of physics, computation,
+machine learning, and Earth-system observations.
+</p>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- EDUCATION -->
+<!-- ========================================================= -->
 
 <section id="education">
+
 <h2>Education</h2>
-<p><strong>Ph.D. in Computational Geophysics</strong><br>
-IIT Bombay (India) & Monash University (Australia), 2016–2022<br>
-Thesis: <em>Statistical and Machine Learning Models for the Evaluation of
-Geophysical and Geomechanical Data</em></p>
-<p><strong>M.Tech. in Petroleum Geoscience</strong><br>
-Indian Institute of Technology Bombay, 2013–2015</p>
-<p><strong>Integrated M.Tech. in Geophysical Technology</strong><br>
-Indian Institute of Technology Roorkee, 2008–2013</p>
+
+<p>
+
+<strong>Ph.D. in Computational Geophysics</strong><br>
+
+IITB–Monash Research Academy<br>
+
+Indian Institute of Technology Bombay & Monash University,
+Australia<br>
+
+2016–2022<br>
+
+Thesis:
+<em>
+Statistical and Machine Learning Models for the Evaluation of
+Geophysical and Geomechanical Data
+</em>
+
+</p>
+
+
+<p>
+
+<strong>M.Tech. in Petroleum Geosciences</strong><br>
+
+Indian Institute of Technology Bombay<br>
+
+2013–2015
+
+</p>
+
+
+<p>
+
+<strong>Integrated M.Tech. in Geophysical Technology</strong><br>
+
+Indian Institute of Technology Roorkee<br>
+
+2008–2013
+
+</p>
+
 </section>
+
+
+<!-- ========================================================= -->
+<!-- EXPERIENCE -->
+<!-- ========================================================= -->
 
 <section id="experience">
-<h2>Professional Experience</h2>
+
+<h2>Academic & Research Experience</h2>
+
 <ul>
-<li><strong>Principal Project Scientist</strong>, IIT Delhi (Aug 2023 – Present)</li>
-<li><strong>Senior Project Scientist</strong>, IIT Delhi (Dec 2022 – Jul 2023)</li>
-<li><strong>Junior Research Fellow</strong>, IIT Bombay (Aug 2015 – Apr 2016)</li>
+
+<li>
+<strong>Assistant Professor (Grade-I)</strong><br>
+Department of Applied Geophysics,
+IIT (ISM) Dhanbad<br>
+May 2026 – Present
+</li>
+
+<li>
+<strong>Principal Project Scientist</strong><br>
+Department of Civil Engineering,
+Indian Institute of Technology Delhi<br>
+Aug 2023 – Apr 2026
+</li>
+
+<li>
+<strong>Senior Project Scientist</strong><br>
+Indian Institute of Technology Delhi<br>
+Dec 2022 – Jul 2023
+</li>
+
+<li>
+<strong>Junior Research Fellow</strong><br>
+Indian Institute of Technology Bombay<br>
+Aug 2015 – Apr 2016
+</li>
+
 </ul>
+
 </section>
+
+
+<!-- ========================================================= -->
+<!-- PUBLICATIONS -->
+<!-- ========================================================= -->
 
 <section id="publications">
+
 <h2>Selected Publications</h2>
-<ol> 
-    <li> Kumar, A., Saharia, M., Kirstetter, P. (2024). <em>Mapping a novel metric for flash flood recovery using interpretable machine learning.</em> Journal of Hydrometeorology. doi: <a href="https://doi.org/10.1175/JHM-D-23-0196.1" target="_blank" rel="noopener noreferrer"> 10.1175/JHM-D-23-0196.1 </a> </li> 
-    <li> Hu, R., Kumar, A., Yellishetty, M., Walsh, S.D.C. (2024). <em>A bootstrap strategy to train, validate and test reduced-order models of coupled geomechanical processes.</em> Computers and Geotechnics, 167, 106094. doi: <a href="https://doi.org/10.1016/j.compgeo.2024.106094" target="_blank" rel="noopener noreferrer"> 10.1016/j.compgeo.2024.106094 </a> </li> 
-    <li> Kumar, A., Hu, R., Walsh, S.D.C. (2021). <em>Development of reduced order hydro-mechanical models of fractured media.</em> Rock Mechanics and Rock Engineering, 55, 235–251. doi: <a href="https://doi.org/10.1007/s00603-021-02668-9" target="_blank" rel="noopener noreferrer"> 10.1007/s00603-021-02668-9 </a> </li> 
-</ol> 
-    <p> (For a complete list, see the <a href="assets/Curriculum_Vitae_No_References_.pdf" target="_blank" rel="noopener noreferrer">full CV</a>.) </p>
+
+<ol>
+
+<li>
+
+Kumar, A., Saharia, M., Kirstetter, P. (2024).
+
+<em>
+Mapping a novel metric for flash flood recovery using
+interpretable machine learning.
+</em>
+
+Journal of Hydrometeorology.
+
+doi:
+<a href="https://doi.org/10.1175/JHM-D-23-0196.1"
+target="_blank"
+rel="noopener noreferrer">
+
+10.1175/JHM-D-23-0196.1
+
+</a>
+
+</li>
+
+
+<li>
+
+Hu, R., Kumar, A., Yellishetty, M., Walsh, S.D.C. (2024).
+
+<em>
+A bootstrap strategy to train, validate and test
+reduced-order models of coupled geomechanical processes.
+</em>
+
+Computers and Geotechnics, 167, 106094.
+
+doi:
+<a href="https://doi.org/10.1016/j.compgeo.2024.106094"
+target="_blank"
+rel="noopener noreferrer">
+
+10.1016/j.compgeo.2024.106094
+
+</a>
+
+</li>
+
+
+<li>
+
+Kumar, A., Hu, R., Walsh, S.D.C. (2021).
+
+<em>
+Development of reduced order hydro-mechanical models
+of fractured media.
+</em>
+
+Rock Mechanics and Rock Engineering,
+55, 235–251.
+
+doi:
+<a href="https://doi.org/10.1007/s00603-021-02668-9"
+target="_blank"
+rel="noopener noreferrer">
+
+10.1007/s00603-021-02668-9
+
+</a>
+
+</li>
+
+</ol>
+
+
+<p class="small">
+
+For the complete and most recent publication list,
+see my
+
+<a href="https://scholar.google.com/citations?user=KsjXrbYAAAAJ&hl=en"
+target="_blank"
+rel="noopener noreferrer">
+
+Google Scholar profile
+
+</a>
+
+or
+
+<a href="assets/Curriculum_Vitae_No_References_.pdf"
+target="_blank"
+rel="noopener noreferrer">
+
+full CV
+
+</a>.
+
+</p>
+
 </section>
+
+
+<!-- ========================================================= -->
+<!-- TEXTBOOK -->
+<!-- ========================================================= -->
 
 <section id="textbook">
+
 <h2>Textbook</h2>
-<p> <strong>Python for Water and Environment</strong><br> 
-    Dr. Anil Kumar and Dr. Manabendra Saharia, Springer Nature, 2024.<br> 
-    A textbook for undergraduate and postgraduate students, computational hydrologists, geophysicists, and water professionals.<br> 
-    doi: <a href="https://doi.org/10.1007/978-981-99-9408-3" target="_blank" rel="noopener noreferrer"> 10.1007/978-981-99-9408-3 </a> 
+
+<p>
+
+<strong>Python for Water and Environment</strong><br>
+
+Anil Kumar and Manabendra Saharia<br>
+
+Springer Nature, 2024.
+
 </p>
+
+<p>
+
+A computational introduction to Python for students,
+researchers, hydrologists, geoscientists, and environmental
+professionals, with applications to water and environmental
+data analysis.
+
+</p>
+
+<p>
+
+doi:
+
+<a href="https://doi.org/10.1007/978-981-99-9408-3"
+target="_blank"
+rel="noopener noreferrer">
+
+10.1007/978-981-99-9408-3
+
+</a>
+
+</p>
+
 </section>
 
-<section id="talks">
-<h2>Invited Talks</h2>
-<ul> 
-    <li> <strong>Clarity, Structure, Impact: Writing Scientific Reports That Work</strong><br> Invited guest lecture, M.Sc. Artificial Intelligence and Machine Learning Programme, VIT Vellore, October 16, 2025. </li> 
-    <li> <strong>GPU-Enabled Flood Forecasting System for Chennai</strong><br> Invited talk to Ph.D. students and researchers, School of Artificial Intelligence (ScAI), IIT Delhi, July 2025. </li> 
-</ul>
-</section>
+
+<!-- ========================================================= -->
+<!-- TEACHING -->
+<!-- ========================================================= -->
 
 <section id="teaching">
-<h2>Teaching & Mentoring</h2>
-<ul> 
-    <li>Lecture on Foundations of AI/ML to Delhi Government IT Dept. officers</li> 
-    <li>Delivered a 2-day advanced training program on AI and geospatial analytics for officers of the Indian Army’s Northern Command</li> 
-    <li>Instructor, Madhya Pradesh State Skill Development & Employment Generation Board (MPSSDEGB) along with Foundation For Innovation And Technology Transfer, Indian Institute of Technology Delhi (FITT – IITD)</li> 
-    <li>Instructor, AI/ML for Industry (CEP e-Vidya, IIT Delhi): completed 4 batches; Batch 5 and 6 currently ongoing</li> 
-    <li>Teaching Assistant and Co-taught, CVL736 – Soft Computing Techniques in Water Resources (IIT Delhi)</li> 
-    <li>Teaching Assistant and Co-taught, CVP731 – Simulation Lab & Computational Water Resources (IIT Delhi)</li> 
-    <li>Teaching Assistant and Co-taught, GS535 – Statistical Methods in Geosciences (IIT Bombay)</li> 
+
+<h2>Teaching</h2>
+
+<p>
+At IIT (ISM), my teaching interests span computational
+geophysics, near-surface geophysics, inverse theory,
+artificial intelligence, remote sensing, and geophysical
+data science.
+</p>
+
+<ul>
+
+<li>
+<strong>Introduction to Near Surface Geophysics</strong> —
+electrical, electromagnetic, seismic, gravity, magnetic,
+and environmental applications.
+</li>
+
+<li>
+<strong>Inverse Theory & Artificial Intelligence</strong> —
+inverse problems, regularization, statistical learning,
+machine learning, and geophysical applications.
+</li>
+
+<li>
+<strong>Applied Remote Sensing</strong> —
+Earth observation, image interpretation, spectral analysis,
+GIS, Python, and environmental applications.
+</li>
+
+<li>
+<strong>Geophysical Data Science</strong> —
+statistical analysis, dimensionality reduction,
+uncertainty, machine learning, and computational workflows.
+</li>
+
 </ul>
+
+
+<h3>Previous Teaching & Professional Training</h3>
+
+<ul>
+
+<li>
+Instructor, AI/ML for Industry, CEP e-Vidya,
+IIT Delhi.
+</li>
+
+<li>
+Advanced training in AI and geospatial analytics
+for officers of the Indian Army's Northern Command.
+</li>
+
+<li>
+AI/ML training for government and professional
+participants through IIT Delhi programmes.
+</li>
+
+<li>
+Co-teaching / teaching assistance in
+Soft Computing Techniques in Water Resources,
+Simulation & Computational Water Resources,
+and Statistical Methods in Geosciences.
+</li>
+
+</ul>
+
 </section>
 
+
+<!-- ========================================================= -->
+<!-- MENTORING -->
+<!-- ========================================================= -->
+
+<section id="mentoring">
+
+<h2>Research Mentoring</h2>
+
+<h3>Research Scholars</h3>
+
+<ul>
+
+<li>
+<strong>Ankit Kumar</strong> —
+Hydrogeophysics, groundwater, climate change,
+and data-driven Earth-system modeling.
+</li>
+
+</ul>
+
+<p>
+I am interested in mentoring students working at the
+intersection of <strong>geophysics, numerical modeling,
+scientific machine learning, remote sensing, hydrogeology,
+and environmental prediction</strong>.
+</p>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- TALKS -->
+<!-- ========================================================= -->
+
+<section id="talks">
+
+<h2>Selected Invited Talks & Training</h2>
+
+<ul>
+
+<li>
+
+<strong>
+Clarity, Structure, Impact:
+Writing Scientific Reports That Work
+</strong><br>
+
+Invited guest lecture,
+M.Sc. Artificial Intelligence and Machine Learning Programme,
+VIT Vellore,
+October 16, 2025.
+
+</li>
+
+
+<li>
+
+<strong>
+GPU-Enabled Flood Forecasting System for Chennai
+</strong><br>
+
+Invited research talk,
+School of Artificial Intelligence,
+IIT Delhi,
+July 2025.
+
+</li>
+
+
+<li>
+
+<strong>
+Artificial Intelligence and Geospatial Analytics
+</strong><br>
+
+Advanced professional training programme for officers
+of the Indian Army's Northern Command.
+
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
 <footer>
-<p>© 2025 Dr. Anil Kumar · Last updated December 2025</p>
+
+<p>
+© 2026 Dr. Anil Kumar ·
+Department of Applied Geophysics ·
+IIT (ISM) Dhanbad<br>
+Last updated September 2026
+</p>
+
 </footer>
 
+
 </div>
 </div>
 </div>
 
-<!-- ===== AUTO-HIGHLIGHT SCRIPT ===== -->
+
+<!-- ========================================================= -->
+<!-- AUTO-HIGHLIGHT NAVIGATION -->
+<!-- ========================================================= -->
+
 <script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav a");
+
+const sections =
+    document.querySelectorAll("section");
+
+const navLinks =
+    document.querySelectorAll(".nav a");
 
 window.addEventListener("scroll", () => {
+
     let current = "";
+
     sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 120) {
+
+        if (
+            window.scrollY >=
+            sec.offsetTop - 140
+        ) {
+
             current = sec.id;
+
         }
+
     });
+
     navLinks.forEach(link => {
+
         link.classList.toggle(
             "active",
-            link.getAttribute("href") === "#" + current
+            link.getAttribute("href") ===
+            "#" + current
         );
+
     });
+
 });
+
 </script>
 
 </body>
 </html>
+```
